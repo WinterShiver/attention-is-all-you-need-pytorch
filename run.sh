@@ -1,0 +1,3 @@
+python preprocess.py -lang_src "de" -lang_trg "en" -share_vocab -save_data "save/preprocess_data.pkl"
+python train.py -data_pkl "save/preprocess_data.pkl" -log "result/train_log" -embs_share_weight -proj_share_weight -label_smoothing -save_model "save/trained" -b 64 -warmup 128000 -epoch 1
+python translate.py -data_pkl "save/preprocess_data.pkl" -model "save/trained.chkpt" -output "result/prediction.txt"

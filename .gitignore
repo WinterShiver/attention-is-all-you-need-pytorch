@@ -101,3 +101,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# model - added by Chong Apr 22 2020
+/save/

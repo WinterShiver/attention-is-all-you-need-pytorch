@@ -16,6 +16,7 @@ from torchtext.datasets import TranslationDataset
 import transformer.Constants as Constants
 from learn_bpe import learn_bpe
 from apply_bpe import BPE
+from utils.sl_utils import save_file, load_file
 
 
 __author__ = "Yu-Hsiang Huang"
@@ -328,6 +329,7 @@ def main_wo_bpe():
         'test': test.examples}
 
     print('[Info] Dumping the processed data to pickle file', opt.save_data)
+    # save_file(data, opt.save_data)
     pickle.dump(data, open(opt.save_data, 'wb'))
 
 
